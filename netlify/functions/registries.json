@@ -1,0 +1,12 @@
+{"note":"Только цифры, найденные в открытых реестрах; ссылки — на первоисточник. Не связаны с демо-заводами.",
+"items":[
+{"name":"US Steel Corp - Gary Works","place":"Gary, IN, США","registry":"US EPA GHGRP","year":2022,"value":10414363,"unit":"т CO₂e (сумма по подразделам GHGRP)","url":"https://data.epa.gov/efservice/pub_facts_subp_ghg_emission/facility_id/=/1000418/year/=/2022/JSON"},
+{"name":"Gen J M Gavin (Lightstone Generation)","place":"Cheshire, OH, США","registry":"US EPA GHGRP","year":2022,"value":11298607,"unit":"т CO₂e (сумма по подразделам GHGRP)","url":"https://data.epa.gov/efservice/pub_facts_subp_ghg_emission/facility_id/=/1001194/year/=/2022/JSON"},
+{"name":"Scherer (Oglethorpe/Southern Co и др.)","place":"Juliette, GA, США","registry":"US EPA GHGRP","year":2022,"value":8170628,"unit":"т CO₂e (сумма по подразделам GHGRP)","url":"https://data.epa.gov/efservice/pub_facts_subp_ghg_emission/facility_id/=/1001051/year/=/2022/JSON"},
+{"name":"Cleveland-Cliffs Cleveland Works","place":"Cleveland, OH, США","registry":"US EPA GHGRP","year":2022,"value":2943277,"unit":"т CO₂e (сумма по подразделам GHGRP)","url":"https://data.epa.gov/efservice/pub_facts_subp_ghg_emission/facility_id/=/1007177/year/=/2022/JSON"},
+{"name":"Павлодарская область (все стационарные источники)","place":"Казахстан","registry":"Бюро нац. статистики РК","year":2023,"value":694.2,"unit":"тыс. т загрязняющих веществ","url":"https://stat.gov.kz/en/industries/environment/stat-eco/publications/183070/"},
+{"name":"Карагандинская область (все стационарные источники)","place":"Казахстан","registry":"Бюро нац. статистики РК","year":2023,"value":455.0,"unit":"тыс. т загрязняющих веществ","url":"https://stat.gov.kz/en/industries/environment/stat-eco/publications/183070/"},
+{"name":"Восточно-Казахстанская область","place":"Казахстан","registry":"Бюро нац. статистики РК","year":2023,"value":80.9,"unit":"тыс. т загрязняющих веществ","url":"https://stat.gov.kz/en/industries/environment/stat-eco/publications/183070/"},
+{"name":"г. Астана","place":"Казахстан","registry":"Бюро нац. статистики РК","year":2023,"value":46.4,"unit":"тыс. т загрязняющих веществ","url":"https://stat.gov.kz/en/industries/environment/stat-eco/publications/183070/"},
+{"name":"Республика Казахстан, всего","place":"Казахстан","registry":"Бюро нац. статистики РК","year":2023,"value":2257.5,"unit":"тыс. т загрязняющих веществ","url":"https://stat.gov.kz/en/industries/environment/stat-eco/publications/183070/"}
+]}

@@ -1,0 +1,1 @@
+const d=require("./_data");exports.handler=async(ev)=>{const {l}=await d.ctx(ev),h=d.health(l);return d.json({broken:d.broken(l),health:h,completenessAvg:+(h.reduce((a,x)=>a+x.completeness,0)/h.length).toFixed(1),rule:"Пропуски всегда помечаются; оценка по соседям показывается только пунктиром и не входит в цифры отчёта"});};

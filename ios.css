@@ -1,0 +1,67 @@
+:root{--acc:#2F6BFF;--blue:#2F6BFF;--warn:#FF9500;--bad:#FF3B30;--bg:#0B0B0F;--ink:#FFFFFF;--mut:#A1A1AA;--glass:rgba(28,28,32,.55);--bd:rgba(255,255,255,.12);--r:30px;
+--sh:0 8px 32px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.4);--spring:cubic-bezier(.34,1.56,.64,1)}
+@media (prefers-color-scheme:dark){:root{--bg:#0B0B0F;--ink:#F5F5F7;--mut:#98989D;--glass:rgba(44,44,46,.55);--bd:rgba(255,255,255,.12)}}
+html,body{background:var(--bg)!important;color:var(--ink)!important;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',Inter,system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
+h1{font-weight:800!important;letter-spacing:-.035em!important;color:var(--ink)!important}
+h2,h3{font-weight:700!important;letter-spacing:-.025em!important;color:var(--ink)!important}
+.muted,p{color:var(--mut)}
+a{color:var(--blue)}
+.hero .mapbox,.prob p.big,.prob ul,.bento .c,.c.xl,.c.m,.c.h,.price .card,.stats .s,.steps .st,footer .grid>div,.final .grid>div,.panel,.ctrl,.legend,.layers,.overlay,.tag,.demo,.maplibregl-popup-content{
+background:var(--glass)!important;-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+border:1px solid var(--bd)!important;border-radius:var(--r)!important;box-shadow:var(--sh)!important;color:var(--ink)!important}
+.tag,.demo{border-radius:999px!important}
+.maplibregl-popup-tip{display:none}
+.price .card.acc{outline:2px solid var(--acc)}
+.num,.stats b,.stats b em,.price .amt{color:var(--ink)!important}
+.stats b em,.logo i{color:var(--acc)!important;font-style:normal}
+.btn{border-radius:999px!important;background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--bd)!important;box-shadow:var(--sh)!important;-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);transition:transform .35s var(--spring)}
+.btn.p{background:var(--blue)!important;color:#fff!important;border-color:transparent!important}
+.btn:active,.seg button:active,.bento .c:active,.card:active{transform:scale(.96)}
+.seg{background:rgba(118,118,128,.16)!important;border-radius:999px!important;padding:3px!important;border:0!important}
+.seg button{border-radius:999px!important;background:transparent!important;color:var(--ink)!important;border:0!important;transition:transform .35s var(--spring),background .2s}
+.seg button.on{background:#fff!important;color:#000!important;box-shadow:0 3px 8px rgba(0,0,0,.12)!important}
+/* floating glass tab bar */
+nav.top{position:fixed!important;top:auto!important;bottom:max(14px,env(safe-area-inset-bottom))!important;left:50%!important;transform:translateX(-50%);width:min(680px,calc(100% - 24px))!important;z-index:1000!important;
+background:var(--glass)!important;-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--bd)!important;border-radius:999px!important;box-shadow:0 10px 40px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.4)!important}
+nav.top .wrap{padding:8px 10px 8px 20px!important;max-width:none!important}
+nav.top a{color:var(--ink)}
+body{padding-bottom:100px}
+/* full-bleed map in app */
+.app .mapwrap{position:fixed!important;inset:0!important;border-radius:0!important;z-index:0}
+.app .side{position:relative;z-index:2}
+.risk.hi,.hi{color:var(--bad)} .risk.mid,.mid{color:var(--warn)}
+/* spring appear */
+.fade{transition:opacity .6s ease,transform .7s var(--spring)!important}
+.bento .c,.card,.panel{transition:transform .4s var(--spring)}
+.bento .c:hover,.price .card:hover{transform:translateY(-3px)}
+@media (max-width:760px){nav.top .links{display:none}:root{--r:24px}}
+.app{display:block!important;height:100vh!important}
+.app .side{position:fixed!important;top:16px;right:16px;bottom:100px;width:min(400px,calc(100% - 32px));border:0!important;background:transparent!important;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:0!important}
+
+@media(max-width:900px){.app .mapwrap{position:relative!important;height:65vh}.app .side{position:relative!important;top:0;right:0;bottom:auto;width:auto;margin:-40px 12px 0}}
+h1,h2,h3,.logo,.num,.stats b,.price .amt{font-family:Manrope,Inter,-apple-system,'SF Pro Display',sans-serif!important;letter-spacing:-.04em!important}
+.final,.price .card.acc{background:#0B0B0F!important;color:#fff!important}
+.final h2,.price .card.acc *{color:#fff!important}
+.logo i{background:var(--acc)!important}
+.seg button.on{background:var(--acc)!important;color:#fff!important}
+::selection{background:#2F6BFF;color:#fff}
+:root{--l:#2F6BFF;--g:var(--bg);--g2:rgba(255,255,255,.7);--g3:rgba(11,11,15,.06);--o:var(--ink);--m:var(--mut);--line:rgba(11,11,15,.08)}
+@media (prefers-color-scheme:dark){:root{--g2:rgba(44,44,46,.7);--g3:rgba(255,255,255,.08);--line:rgba(255,255,255,.1)}}
+:root{--g2:rgba(40,40,46,.7);--g3:rgba(255,255,255,.08);--line:rgba(255,255,255,.1)}
+.seg button{color:#fff!important}
+.final,.price .card.acc{background:#2F6BFF!important}
+.btn{color:#fff!important}
+.app .ctrl{position:absolute!important;left:16px;top:16px;z-index:3;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.layers{border-radius:22px!important;padding:12px 16px!important}
+.seg{-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);background:rgba(28,28,32,.6)!important}
+.kpis div,.day{background:rgba(255,255,255,.07)!important;border-radius:18px!important;color:#fff!important;border:1px solid rgba(255,255,255,.08)}
+.kpis b,.day b,.day,.kpis div *,.day *{color:#fff!important}
+.kpis small,.day small{color:#A1A1AA!important}
+.panel,.panel *,.layers,.layers *,.legend,.legend *{color:#fff}
+.panel .muted,.panel small{color:#A1A1AA}
+.layers input{accent-color:#2F6BFF}
+/* Pear-style chrome */
+.panel h3,h1,h2{font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
+.panel h3{font-size:22px!important}
+.btn.p{background:#0033CC!important;color:#fff!important;border-radius:999px!important}
+nav.top{background:#3F60A0!important;color:#fff!important}nav.top .logo{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;color:#fff}

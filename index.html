@@ -1,0 +1,165 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IMPACT — кабинет эколога для заводов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#3F60A0;--bright:#0033CC;--cream:#F5EFEB;--ink:#1A1A1A}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis-smooth{scroll-behavior:auto!important}
+body{font:400 16px/1.6 Inter,system-ui,sans-serif;background:var(--deep);color:#fff;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h1{font-size:clamp(56px,8vw,96px)}h2{font-size:clamp(44px,6vw,84px)}h3{font-size:34px}
+em{font-style:italic}
+.lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;opacity:.85}
+.btn{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:14px 28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background .3s,color .3s}
+.btn:hover{background:#fff;color:var(--bright)}.cream .btn:hover{background:var(--ink);color:var(--cream)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;color:#fff;transition:color .3s}nav.dark{color:#1A1A1A}
+nav b{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;letter-spacing:.04em}
+nav .links{display:flex;gap:28px}nav .links a{text-decoration:none}
+#gl{position:fixed;inset:0;z-index:0;pointer-events:none}
+section{position:relative;z-index:1;padding:14vh 5vw}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:5vw;align-items:center}
+.hero{min-height:100vh;display:flex;align-items:flex-end;padding-bottom:12vh}
+.hero p.sub{max-width:520px;margin:28px 0 36px;font-size:16px;opacity:.9}
+.hero .meta{position:absolute;right:5vw;bottom:12vh;text-align:right;max-width:260px;font-size:14px;opacity:.8}
+.about{background:transparent;min-height:90vh}
+.about .photo{aspect-ratio:4/5;background:#203566 center/cover;border-radius:2px;overflow:hidden}
+.about .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05)}
+.bright{background:var(--bright);min-height:100vh;overflow:hidden}
+.slice{position:relative;height:70vh;margin-top:6vh}
+.slice .half{position:absolute;inset:0;background:center/cover;will-change:clip-path,transform}
+.slice .l{clip-path:inset(0 50% 0 0)}.slice .r{clip-path:inset(0 0 0 50%)}
+.slice .reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3vw;margin-top:10vh;border-top:1px solid rgba(255,255,255,.35);padding-top:40px}
+.stats .n{font-family:'Instrument Serif',serif;font-size:clamp(64px,9vw,128px);line-height:1}
+.stats small{display:block;font-size:14px;opacity:.85;margin-top:8px}.stats a{font-size:12px;opacity:.7}
+.cream{background:var(--cream);color:var(--ink)}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:8vh;border-top:1px solid rgba(26,26,26,.2)}
+.feat div{padding:36px 36px 36px 0;border-bottom:1px solid rgba(26,26,26,.2)}
+.feat div:nth-child(odd){border-right:1px solid rgba(26,26,26,.2)}.feat div:nth-child(even){padding-left:36px}
+.feat p{font-size:15px;opacity:.75;margin-top:10px;max-width:420px}
+.feat .lbl{display:block;margin-bottom:14px;opacity:.5}
+.price{min-height:90vh}
+#orb{width:100%;aspect-ratio:1;max-width:520px;justify-self:center}
+.price .n{font-family:'Instrument Serif',serif;font-size:clamp(72px,10vw,140px);line-height:1;margin:20px 0}
+.cta{background:var(--bright);text-align:center;min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+footer{position:relative;z-index:1;background:var(--ink);color:#ddd;padding:60px 5vw;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+footer a{display:block;opacity:.8;margin-top:6px}
+.rv{opacity:0;transform:translateY(40px)}
+@media(max-width:800px){.split,.feat,.stats,footer{grid-template-columns:1fr}.hero .meta{display:none}nav .links{display:none}.feat div{padding:28px 0!important;border-right:0!important}.slice{height:50vh}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style></head><body>
+<canvas id="gl"></canvas>
+<nav><b>IMPACT</b><div class="links lbl"><a href="#about">О нас</a><a href="#features">Функции</a><a href="#price">Тариф</a><a href="#economics">Экономика</a><a href="app.html">Карта</a></div><a class="btn" href="app.html" style="padding:10px 20px">Войти</a></nav>
+
+<section class="hero" id="hero"><div>
+<div class="lbl">Кабинет эколога · Казахстан · 2026</div><br>
+<h1>IMPACT видит<br>выбросы <em>раньше всех.</em></h1>
+<p class="sub">Кабинет эколога для заводов: карта цехов, труб и датчиков на границе СЗЗ</p>
+<a class="btn" href="app.html">Открыть карту →</a></div>
+<div class="meta">Откуда дует, здоровье данных, режим НМУ и отчёт, который утверждает эколог.</div></section>
+
+<section class="about" id="about"><div class="split">
+<div class="rv"><div class="lbl">01 — Что мы делаем</div><br><h2>Мы автоматизируем<br>работу <em>эколога.</em></h2>
+<p style="max-width:480px;margin-top:28px;opacity:.9">Не теряем данные при поломке датчиков, заранее видим дни неблагоприятной погоды и помогаем снижать выбросы — без ручных таблиц и отчётов по ночам.</p></div>
+<div class="photo rv"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1200&q=80" alt="Трубы завода" loading="lazy"></div></div></section>
+
+<section class="bright" id="numbers">
+<div class="lbl">02 — Масштаб проблемы</div>
+<div class="slice" id="slice">
+<div class="reveal"><h2>Воздух — это<br><em>данные.</em></h2></div>
+<div class="half l" style="background-image:url(https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80)"></div>
+<div class="half r" style="background-image:url(https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600&q=80)"></div></div>
+<div class="stats">
+<div><div class="n" data-c="113">0</div><small>заводов обязаны по закону ставить автоматическую систему мониторинга выбросов</small><a href="https://ortcom.kz/en/press-relizy/1790762235" target="_blank">Источник: Минэкологии РК</a></div>
+<div><div class="n"><span data-c="11">0</span> из 70</div><small>городов с высоким загрязнением воздуха</small><a href="https://www.kazhydromet.kz/uploads/calendar/277/year_file/699fc2766ea09informacionnyy-byulleten-po-rk-za-2025-god_28-01-2026.pdf" target="_blank">Источник: Казгидромет, 2025</a></div>
+<div><div class="n" data-c="718">0</div><small>предприятий I категории — наш рынок</small><a href="https://unece.org/sites/default/files/2024-12/6_Kazakhstan.pdf" target="_blank">Источник: UNECE</a></div>
+</div></section>
+
+<section class="cream" id="features">
+<div class="split"><div><div class="lbl">03 — Функции</div><br><h2>Всё, что нужно<br><em>экологу</em> завода.</h2></div>
+<p style="opacity:.75;max-width:420px">Программа поверх уже установленных датчиков (CSV/API): цеха, трубы и датчики по границе СЗЗ на одной карте. Оборудование — через партнёров.</p></div>
+<div class="feat">
+<div class="rv"><span class="lbl">i.</span><h3>Откуда дует: вероятные источники</h3><p>При превышении на датчике ранжируем трубы из реестра в секторе ±22,5° против ветра с учётом расстояния и показываем уверенность в %.</p></div>
+<div class="rv"><span class="lbl">ii.</span><h3>Здоровье данных</h3><p>Статусы Online / Offline / Flatline / Spike / Missing и полнота в %. Пропуски всегда помечены; оценка по соседям — только пунктиром на графике и не входит в отчёт.</p></div>
+<div class="rv"><span class="lbl">iii.</span><h3>Режим НМУ</h3><p>Официальные предупреждения Казгидромета плюс индикатор погодного риска (не официальный прогноз), чек-лист мер и журнал действий.</p></div>
+<div class="rv"><span class="lbl">iv.</span><h3>Отчёт с утверждением</h3><p>Цифры считает код, ИИ пишет только резюме, эколог проверяет и утверждает. Экспорт в PDF.</p></div>
+</div></section>
+
+<section class="cream price" id="price"><div class="split">
+<div><div class="lbl">04 — Тариф и экономика</div><div class="n">150 000 ₸</div><p style="font-size:18px">в месяц за завод</p>
+<table style="margin:22px 0;border-collapse:collapse;font-size:14px;width:100%;max-width:480px">
+<tr><td style="padding:5px 0;opacity:.65">Доступный рынок</td><td>113 × 150 000 × 12 = <b>203,4 млн ₸/год</b></td></tr>
+<tr><td style="padding:5px 0;opacity:.65">Потолок рынка</td><td>718 предприятий = 1,29 млрд ₸/год</td></tr>
+<tr><td style="padding:5px 0;opacity:.65">Клиенты, годы 1/2/3</td><td>3 / 8 / 15 → выручка 2,7 / 9,9 / 20,7 млн ₸</td></tr>
+<tr><td style="padding:5px 0;opacity:.65">Цена / COGS / маржа</td><td>150 000 / 30 000 / 120 000 ₸</td></tr>
+<tr><td style="padding:5px 0;opacity:.65">CAC / LTV</td><td>480 000 ₸ / 1,44 млн ₸</td></tr>
+<tr><td style="padding:5px 0;opacity:.65">LTV/CAC · окупаемость</td><td>3,0 · 4 мес</td></tr></table>
+<p style="opacity:.55;font-size:12px;margin-bottom:24px">Все цифры — гипотеза, проверяем на пилотах.</p>
+<a class="btn" href="app.html">Открыть кабинет</a></div>
+<canvas id="orb"></canvas></div></section>
+
+<section class="cream" id="economics"><div class="lbl">05 — Экономика</div><br><h2>Экономика <em>IMPACT.</em></h2><br><div id="econ"></div></section>
+<section class="cta" id="cta"><div class="lbl">05 — Старт</div><h2>Подключите завод<br>за <em>одну неделю.</em></h2><a class="btn" href="mailto:abunuraly6@gmail.com?subject=IMPACT%20—%20подключение%20завода">Подключить завод</a></section>
+
+<footer><div><b style="font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;color:#fff">IMPACT</b><p style="margin-top:10px">Кабинет эколога для промышленных предприятий. AuaHack 2026, Астана.</p><a href="https://github.com/Beknurrr-code/Impact" target="_blank">GitHub →</a><a href="app.html">Карта →</a></div>
+<div><div class="lbl">Источники</div><a href="https://ortcom.kz/en/press-relizy/1790762235" target="_blank">Минэкологии РК — 113 заводов обязаны ставить АСМ выбросов</a><a href="https://www.kazhydromet.kz/uploads/calendar/277/year_file/699fc2766ea09informacionnyy-byulleten-po-rk-za-2025-god_28-01-2026.pdf" target="_blank">Казгидромет — бюллетень 2025</a><a href="https://unece.org/sites/default/files/2024-12/6_Kazakhstan.pdf" target="_blank">UNECE — 718 предприятий</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches, MOB=innerWidth<800;
+gsap.registerPlugin(ScrollTrigger);
+if(!RM&&!MOB){const lenis=new Lenis({lerp:.1});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);}
+document.querySelectorAll(".cream").forEach(s=>ScrollTrigger.create({trigger:s,start:"top 40px",end:"bottom 40px",onToggle:e=>document.querySelector("nav").classList.toggle("dark",e.isActive)}));
+// count-up
+document.querySelectorAll('[data-c]').forEach(el=>{const v=+el.dataset.c;if(RM){el.textContent=v;return}
+ ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{const o={x:0};gsap.to(o,{x:v,duration:1.8,ease:'power3.out',onUpdate:()=>el.textContent=Math.round(o.x)})}})});
+if(!RM){gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}}));
+ // slice
+ const tl=gsap.timeline({scrollTrigger:{trigger:'#slice',start:MOB?'top 70%':'top 20%',end:MOB?'bottom 30%':'+=120%',scrub:1,pin:!MOB}});
+ tl.to('.slice .l',{xPercent:-55,ease:'none'},0).to('.slice .r',{xPercent:55,ease:'none'},0).from('.slice .reveal',{scale:.8,opacity:0},0);
+}
+// ===== Three.js hero particles =====
+(function(){
+ const cv=document.getElementById('gl');const R=new THREE.WebGLRenderer({canvas:cv,antialias:false,alpha:true});
+ R.setPixelRatio(Math.min(devicePixelRatio,1.5));R.setSize(innerWidth,innerHeight);
+ const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,100);C.position.set(0,0,9);
+ const N=MOB?1800:6000,pos=new Float32Array(N*3),rnd=new Float32Array(N*3),col=new Float32Array(N*3);
+ // factory silhouette: base block + 3 stacks + smoke plumes
+ const stacks=[[-1.6,2.6],[0,3.4],[1.5,2.2]];
+ for(let i=0;i<N;i++){let x,y,z,t=Math.random(),c=1;
+  if(t<.3){x=(Math.random()-.5)*6;y=-2.2+Math.random()*1.4;z=(Math.random()-.5)*1.2;if(Math.random()<.5)y=-2.2+Math.floor(Math.random()*2)*1.4}
+  else if(t<.55){const s=stacks[i%3];const a=Math.random()*6.28;x=s[0]+Math.cos(a)*.22;z=Math.sin(a)*.22;y=-.8+Math.random()*s[1]}
+  else{const s=stacks[i%3];const h=Math.random();y=-.8+s[1]+h*3.2;const sp=.2+h*1.4;x=s[0]+h*1.8+(Math.random()-.5)*sp;z=(Math.random()-.5)*sp;c=.75}
+  pos.set([x,y,z],i*3);rnd.set([(Math.random()-.5)*30,(Math.random()-.5)*20,Math.random()*12],i*3);col.set([c,c,1],i*3)}
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos.slice(),3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
+ const m=new THREE.PointsMaterial({size:MOB?.045:.035,vertexColors:true,transparent:true,opacity:.9,depthWrite:false});
+ const P=new THREE.Points(g,m);P.position.x=MOB?0:2.2;S.add(P);
+ const st={p:0};
+ if(!RM)gsap.to(st,{p:1,ease:'none',scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:true}});
+ let mx=0,my=0;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+ const deb=(f,ms=150)=>{let t;return()=>{clearTimeout(t);t=setTimeout(f,ms)}};addEventListener('resize',deb(()=>{R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()}));
+ const a=g.attributes.position.array;let last=-1,t0=0;
+ let run=true;function wake(){if(!run){run=true;requestAnimationFrame(f)}}addEventListener('scroll',wake,{passive:true});document.addEventListener('visibilitychange',()=>{if(!document.hidden)wake()});
+ function f(t){const p=st.p;
+  if(document.hidden||(p>1.05&&last>1.05)){cv.style.opacity=0;run=false;return}requestAnimationFrame(f);cv.style.opacity=Math.max(0,1-Math.max(0,p-.75)*4);
+  const e=p*p;const w=Math.sin(t*.0006)*.04;
+  if(Math.abs(p-last)>.0005){for(let i=0;i<N*3;i+=3){a[i]=pos[i]+rnd[i]*e;a[i+1]=pos[i+1]+rnd[i+1]*e;a[i+2]=pos[i+2]+rnd[i+2]*e}g.attributes.position.needsUpdate=true}P.rotation.z=RM?0:w*.5;
+  last=p;C.position.z=9-p*7;P.rotation.y+=(mx*.4-P.rotation.y)*.05;P.rotation.x+=(my*.15-P.rotation.x)*.05;R.render(S,C)}
+ requestAnimationFrame(f);
+})();
+// ===== cream orb (sensor) =====
+(function(){const deb2=(f,ms=150)=>{let t;return()=>{clearTimeout(t);t=setTimeout(f,ms)}};const cv=document.getElementById('orb');const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,1.5));
+ const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,1,.1,50);C.position.z=6;
+ function sz(){const w=cv.clientWidth;R.setSize(w,w,false)}sz();addEventListener('resize',deb2(sz));
+ const orb=new THREE.Mesh(new THREE.IcosahedronGeometry(1.5,20),new THREE.MeshStandardMaterial({color:0x0033CC,metalness:.55,roughness:.28}));S.add(orb);
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(2.2,.015,8,120),new THREE.MeshBasicMaterial({color:0x1A1A1A}));ring.rotation.x=1.2;S.add(ring);
+ const dots=new THREE.Points(new THREE.SphereGeometry(2.6,40,24),new THREE.PointsMaterial({color:0x3F60A0,size:.025}));S.add(dots);
+ S.add(new THREE.AmbientLight(0xffffff,.6));const L=new THREE.DirectionalLight(0xfff2dd,2.2);L.position.set(3,4,5);S.add(L);const L2=new THREE.DirectionalLight(0x88aaff,1);L2.position.set(-4,-2,2);S.add(L2);
+ let mx=0,my=0,vis=false;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+ let on=false;const go=()=>{if(vis&&!document.hidden&&!on){on=true;requestAnimationFrame(f)}};new IntersectionObserver(e=>{vis=e[0].isIntersecting;go()}).observe(cv);document.addEventListener('visibilitychange',go);
+ function f(t){if(!vis||document.hidden){on=false;return}requestAnimationFrame(f);const k=RM?0:1;orb.position.y=Math.sin(t*.0012)*.15*k;orb.rotation.y+=((mx*1.2)-orb.rotation.y)*.05;orb.rotation.x+=((my*.8)-orb.rotation.x)*.05;ring.rotation.z+=.003*k;dots.rotation.y-=.001*k;C.position.x=mx*.8;C.position.y=-my*.8;C.lookAt(0,0,0);R.render(S,C)}
+})();
+</script><script src="econ.js"></script></body></html>
